@@ -430,8 +430,8 @@
     //   "tags": [ "tools" ]
     // }
     {
-        "packageName": "web-partner",
-        "projectFolder": "packages/web-partner"
+        "packageName": "web-a",
+        "projectFolder": "packages/web-a"
     }
   ]
 }
