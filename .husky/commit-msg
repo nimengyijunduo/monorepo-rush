@@ -1,0 +1,27 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# commit校验
+npx --no-install commitlint --edit "$1"
+
+merge='Merge'
+commitMsg=$(cat $1)
+# Merge 的 commit 不需要更改
+if [[ "$commitMsg" == "$merge"* ]]; then
+  exit 0
+else
+  branchName=$(git rev-parse --abbrev-ref HEAD)
+
+  if [[ $branchName =~ [A-Z]+-[0-9]+ ]]; then
+    requirementId=${BASH_REMATCH[0]}
+    commit=$commitMsg
+    # 有可能通过 git commit --amend 修改 commit 信息
+    # 这个时候 commit 已经被修改过了，不需要修改了
+    if [[ $commit =~ [a-z]+\([A-Z]+-[0-9]+\): ]]; then
+      exit 0
+    fi
+    commit="${commit%%:*}($requirementId):${commit#*:}"
+    echo "$commit" >"$1"
+    exit 0
+  fi
+fi

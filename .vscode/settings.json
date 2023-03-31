@@ -1,0 +1,76 @@
+{
+    // 使用项目本地的 typescript，用于编译代码的 IntelliSense 版本相同
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "editor.codeActionsOnSave": {
+        // 自动修复
+        "source.fixAll": false,
+        "source.fixAll.eslint": true
+    },
+    // 保存的时候自动格式化
+    "editor.formatOnSave": true,
+    // 默认格式化工具选择prettier
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[vue]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    // 需要 prettier 的配置文件
+    "prettier.requireConfig": true,
+    // 默认 4 个空格
+    "editor.tabSize": 4,
+    // 设置是否开启prettier插件，默认为true，即开启
+    "prettier.enable": true,
+    // 配置语言的文件关联
+    "files.associations": {
+        "**/package.json": "json",
+        "**/*.json": "jsonc",
+        "**/*.css": "postcss"
+    },
+    // 屏蔽不需要的文件，保持搜索便利
+    "search.exclude": {
+        "**/.git": true,
+        "**/.github": true,
+        "**/.output": true,
+        "**/.pnpm": true,
+        "**/.vscode": true,
+        "**/.yarn": true,
+        "**/bower_components": true,
+        "**/dist/**": true,
+        "**/dist": true,
+        "**/logs": true,
+        "**/node_modules": true,
+        "**/coverage": true,
+        "**/out/**": true,
+        "**/package-lock.json": true,
+        "**/yarn.lock": true,
+        "**/tmp": true,
+        "**/public": true
+    },
+    // 检查词典中是否有这个单词
+    "cSpell.words": [
+        "anatine",
+        "Attributify",
+        "automator",
+        "bytenode",
+        "demi",
+        "iconify",
+        "intlify",
+        "Microservice",
+        "microservices",
+        "nestjs",
+        "outfile",
+        "postuninstall"
+    ],
+    "i18n-ally.localesPaths": [
+        "src/locale",
+        "src/views/login/locale",
+        "src/views/dashboard/monitor/locale",
+        "src/views/dashboard/workplace/locale",
+        "src/views/exception/403/locale",
+        "src/views/exception/404/locale",
+        "src/views/exception/500/locale",
+        "src/views/result/error/locale",
+        "src/views/result/success/locale",
+        "src/views/user/info/locale",
+        "src/views/user/setting/locale"
+    ]
+}
